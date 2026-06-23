@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import useLanguage from '../../context/useLanguage';
 import './RoomDetails.css';
 import first1 from "../../assets/houses/firstHouse/first.jpeg"
@@ -34,20 +34,16 @@ const roomImages = {
   'family-apartment': [third1, third2, third3, third4, third5, third6, third7]
 };
 
+const emptyImages = [];
+
 export default function RoomDetail() {
   const { id } = useParams();
   const { t } = useLanguage();
 
   const roomData = t(`roomDetails.rooms.${id}`);
-  const images = roomImages[id] || [];
-  const [selectedImg, setSelectedImg] = useState('');
-
-  // როცა ოთახი იცვლება, პირველი ფოტო დაყენდეს ავტომატურად
-  useEffect(() => {
-    if (images.length > 0) {
-      setSelectedImg(images[0]);
-    }
-  }, [id, images]);
+  const images = roomImages[id] ?? emptyImages;
+  const [selectedImages, setSelectedImages] = useState({});
+  const selectedImg = selectedImages[id] || images[0] || '';
 
   if (typeof roomData !== 'object') {
     return (
@@ -82,7 +78,7 @@ export default function RoomDetail() {
                   src={img}
                   alt={`${title} ${index + 1}`}
                   className={`thumb-img ${selectedImg === img ? 'selected' : ''}`}
-                  onClick={() => setSelectedImg(img)}
+                  onClick={() => setSelectedImages((selected) => ({ ...selected, [id]: img }))}
                 />
               ))}
             </div>

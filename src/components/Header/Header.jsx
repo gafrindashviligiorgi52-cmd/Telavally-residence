@@ -12,6 +12,7 @@ const NAVIGATION = [
   { path: '/',        labelKey: 'navbar.home',    end: true  },
   { path: '/rooms',   labelKey: 'navbar.rooms',   end: false },
   { path: '/gallery', labelKey: 'navbar.gallery', end: false },
+  { path: '/liked',   labelKey: 'navbar.liked',   end: true  },
 ];
 
 const LANGUAGES = [

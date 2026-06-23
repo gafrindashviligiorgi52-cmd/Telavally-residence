@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import useLanguage from "../../context/useLanguage";
 import "./Home.css";
 import banner1 from "../../assets/images/bannerimg1.png";
@@ -13,24 +13,21 @@ const heroImages = [banner1, banner2, banner3];
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const { t } = useLanguage();
-
-  const [timer, setTimer] = useState(null);
+  const timerRef = useRef(null);
 
   const startTimer = useCallback(() => {
-    const id = setInterval(() => {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
       setCurrentSlide((s) => (s + 1) % heroImages.length);
     }, 5000);
-    setTimer(id);
-    return id;
   }, []);
 
   useEffect(() => {
-    const id = startTimer();
-    return () => clearInterval(id);
+    startTimer();
+    return () => clearInterval(timerRef.current);
   }, [startTimer]);
 
   const goToSlide = (index) => {
-    clearInterval(timer);
     setCurrentSlide(index);
     startTimer();
   };

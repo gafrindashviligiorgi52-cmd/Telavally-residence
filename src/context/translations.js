@@ -4,6 +4,7 @@ const translations = {
       home: 'Home',
       rooms: 'Rooms',
       gallery: 'Gallery',
+      liked: 'Liked',
       about: 'About Us'
     },
     home: {
@@ -73,9 +74,19 @@ const translations = {
         title: 'Family Residence Apartment'
       }
     },
+    liked: {
+      pageTitle: 'Liked Rooms',
+      pageSubtitle: 'Your favorite rooms are saved here for a quick return.',
+      emptyMessage: 'You have no liked rooms yet',
+      backToRooms: 'Back to rooms',
+      remove: 'Remove',
+      viewDetails: 'View details',
+      addRoom: 'Add to liked rooms',
+      unlikeRoom: 'Remove from liked rooms'
+    },
     roomDetails: {
       backBtn: 'Back to Accommodation',
-      perNight: '/ დღე',
+      perNight: 'Day',
       amenitiesTitle: 'Room Amenities',
       bookingTitle: 'Ready to Book Your Stay?',
       bookingSubtitle: 'Experience luxury and hospitality at Telavally Residence.',
@@ -110,6 +121,7 @@ const translations = {
       home: 'მთავარი',
       rooms: 'ოთახები',
       gallery: 'გალერეა',
+      liked: 'დალაიქებულები',
       about: 'ჩვენს შესახებ'
     },
     home: {
@@ -179,9 +191,19 @@ const translations = {
         title: 'საოჯახო რეზიდენს აპარტამენტი'
       }
     },
+    liked: {
+      pageTitle: 'დალაიქებული ოთახები',
+      pageSubtitle: 'შენი საყვარელი ოთახები აქ ინახება სწრაფად დაბრუნებისთვის.',
+      emptyMessage: 'ჯერ დალაიქებული ოთახები არ გაქვს',
+      backToRooms: 'ოთახებში დაბრუნება',
+      remove: 'წაშლა',
+      viewDetails: 'დეტალების ნახვა',
+      addRoom: 'ოთახის დალაიქება',
+      unlikeRoom: 'დალაიქებიდან წაშლა'
+    },
     roomDetails: {
       backBtn: 'უკან განთავსებაზე',
-      perNight: '/ დღე',
+      perNight: 'დღე',
       amenitiesTitle: 'ოთახის კომფორტები',
       bookingTitle: 'მზადა ხართ დაჯავშნად?',
       bookingSubtitle: 'განიცადეთ სიმდიდრე და სტუმართმოყვარეობა თელავი რეზიდენსში.',
