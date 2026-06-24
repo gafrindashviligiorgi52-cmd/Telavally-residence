@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import useLanguage from '../../context/useLanguage';
 import roomsData from '../../data/roomsData';
 import { getLikedRooms, saveLikedRooms } from '../../utils/likedRooms';
+import likedHeaderImage from '../../assets/gallaryPhotos/terrace1.png';
 import './liked.css';
 
 function hydrateLikedRooms(savedRooms) {
@@ -26,8 +27,11 @@ export default function Liked() {
   return (
     <div className='liked-page'>
       <header className='liked-header'>
-        <h2>{t('liked.pageTitle')}</h2>
-        <p>{t('liked.pageSubtitle')}</p>
+        <div className='liked-header-copy'>
+          <h2>{t('liked.pageTitle')}</h2>
+          <p>{t('liked.pageSubtitle')}</p>
+        </div>
+        <img className='liked-header-image' src={likedHeaderImage} alt='' aria-hidden='true' />
       </header>
 
       {likedRooms.length > 0 ? (

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import useLanguage from '../../context/useLanguage';
 import roomsData from '../../data/roomsData';
 import { getLikedRooms, toggleLikedRoom } from '../../utils/likedRooms';
+import roomsHeaderImage from '../../assets/images/bannerimg1.png';
 import './Rooms.css';
 
 export default function Rooms() {
@@ -18,8 +19,11 @@ export default function Rooms() {
   return (
     <div className='rooms-page'>
       <div className='rooms-header'>
-        <h2>{t('rooms.pageTitle')}</h2>
-        <p>{t('rooms.pageSubtitle')}</p>
+        <div className='rooms-header-copy'>
+          <h2>{t('rooms.pageTitle')}</h2>
+          <p>{t('rooms.pageSubtitle')}</p>
+        </div>
+        <img className='rooms-header-image' src={roomsHeaderImage} alt='' aria-hidden='true' />
       </div>
 
       <div className='rooms-grid'>

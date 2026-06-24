@@ -6,6 +6,11 @@
 }
 
 .liked-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 34px;
+  overflow: hidden;
   margin-bottom: 30px;
   padding: 42px 52px;
   border: 1px solid rgba(84, 105, 55, 0.12);
@@ -14,6 +19,11 @@
     linear-gradient(135deg, rgba(247, 242, 232, 0.96), rgba(255, 252, 246, 0.96)),
     #f7f2e8;
   box-shadow: 0 18px 48px rgba(49, 61, 31, 0.08);
+}
+
+.liked-header-copy {
+  min-width: 0;
+  flex: 1;
 }
 
 .liked-header h2 {
@@ -32,6 +42,17 @@
   color: #706b5c;
   font-size: 1rem;
   line-height: 1.7;
+}
+
+.liked-header-image {
+  flex: 0 0 clamp(220px, 31vw, 390px);
+  width: clamp(220px, 31vw, 390px);
+  height: 146px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 0 90px 90px 0;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 18px 36px rgba(49, 61, 31, 0.16);
 }
 
 .liked-grid {
@@ -321,8 +342,15 @@
   }
 
   .liked-header {
+    gap: 22px;
     padding: 34px 26px;
     border-radius: 24px;
+  }
+
+  .liked-header-image {
+    flex-basis: 220px;
+    width: 220px;
+    height: 124px;
   }
 
   .liked-header h2 {
@@ -345,7 +373,16 @@
   }
 
   .liked-header {
+    flex-direction: column;
+    align-items: flex-start;
     padding: 28px 20px;
+  }
+
+  .liked-header-image {
+    width: 100%;
+    flex-basis: auto;
+    height: 150px;
+    border-radius: 20px;
   }
 
   .liked-header h2 {
